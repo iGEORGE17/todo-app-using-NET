@@ -3,6 +3,9 @@ import './App.css'
 import axios from 'axios'
 import { FaTimesCircle } from "react-icons/fa";
 
+const PORT: number = 5071; 
+const URL: string = `http://localhost:${PORT}/api/todoitems`;
+
 interface ITodo {
   id: string
   name: string
@@ -15,13 +18,13 @@ function App() {
   const [isComplete, setIsComplete] = useState<boolean>(false)
 
   const fetchTodos = async () => {
-    const { data } = await axios.get("https://localhost:7214/api/todoitems")
+    const { data } = await axios.get(`${URL}`)
     setTodos(data)
     console.log(data);
   }
 
   const deleteTodo = async (id: any) => {
-    await axios.delete(`https://localhost:7214/api/todoitems/${id}`)
+    await axios.delete(`${URL}/${id}`)
     .then(() => console.log("todo deleted successfully"))
     .catch((err: any) => console.log(err))
     .finally(() => {
@@ -35,13 +38,13 @@ function App() {
   }
 
   const handleCheck = async (id: any) => {
-    const { data } = await axios.get(`https://localhost:7214/api/todoitems/${id}`);
+    const { data } = await axios.get(`${URL}/${id}`);
     const todo = data;
     console.log("todo ", data)
     if(!todo) {
       console.log("todo does not exist");
     }
-    await axios.put(`https://localhost:7214/api/todoitems/${todo?.id}`, {
+    await axios.put(`${URL}/${todo?.id}`, {
       id: todo?.id,
       name: todo?.name,
       isComplete
@@ -76,7 +79,7 @@ function App() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    await axios.post("https://localhost:7214/api/todoitems", {
+    await axios.post(`${URL}`, {
           name,
           isComplete
         }, {

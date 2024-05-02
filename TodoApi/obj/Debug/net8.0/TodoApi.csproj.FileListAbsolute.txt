@@ -757,3 +757,4 @@ C:\Users\iGEORGE\projects\cSharpApps\todoWebApp\TodoApi\obj\Debug\net8.0\refint\
 C:\Users\iGEORGE\projects\cSharpApps\todoWebApp\TodoApi\obj\Debug\net8.0\TodoApi.pdb
 C:\Users\iGEORGE\projects\cSharpApps\todoWebApp\TodoApi\obj\Debug\net8.0\TodoApi.genruntimeconfig.cache
 C:\Users\iGEORGE\projects\cSharpApps\todoWebApp\TodoApi\obj\Debug\net8.0\ref\TodoApi.dll
+C:\Users\iGEORGE\projects\cSharpApps\todoWebApp\TodoApi\obj\Debug\net8.0\TodoApi.sourcelink.json
